@@ -2,6 +2,8 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+car_data = pd.read_csv('./notebooks/vehicles_us.csv') 
+
 st.header('Graficos de aununcios ventas de coches')
 
 hist_button = st.button('Construir histograma') # crear un botón
@@ -11,3 +13,6 @@ if hist_button: # al hacer clic en el botón
     fig = px.histogram(car_data, x="odometer")
     st.plotly_chart(fig, use_container_width=True)
 
+
+ 
+  
